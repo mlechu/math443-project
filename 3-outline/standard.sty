@@ -1,0 +1,348 @@
+% Standard constructions
+% Justin Lawrence - 2023
+% Built off of code from Vinyak Vishtal and Lior Silberman
+
+%% AMS mathematics packages - they contain many useful fonts and symbols.
+\usepackage{amsmath, amsfonts, amssymb}
+\usepackage[english]{babel}
+\usepackage{amsthm}
+%% used for fancy enumerate
+\usepackage{enumitem, kantlipsum}
+%% Proper Script letters, more fonts
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{mathtools}
+\usepackage{etoolbox}
+\usepackage{leftidx}
+\usepackage{tikz}
+\usepackage{tikz-cd}
+\usepackage{graphicx}
+\usepackage{wasysym}
+
+%% Theorem and related environments
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+
+% make things nice and fancy
+\usepackage{fancyhdr} %% for details on how this work, search-engine ``fancyhdr documentation''
+\pagestyle{fancy}
+
+% For physics and code
+\usepackage{physics}
+\usepackage{listings}
+
+% Basic Algebraic Objects
+\def\N{\mathbb {N}}
+\def\Z{\mathbb {Z}}
+\def\Q{\mathbb {Q}}
+\def\R{\mathbb {R}}
+\def\C{\mathbb {C}}
+
+% Operators & Relations/Logic
+\newcommand\restrict{\!\upharpoonright}
+\def\isom{\simeq}
+\def\nisom{{\not\simeq}}
+\def\bs{\backslash}
+\def\implies{\Rightarrow}
+
+% More math operators
+\DeclareMathOperator{\Area}{Area}
+\DeclareMathOperator{\arccosh}{arccosh}
+\DeclareMathOperator{\arcsinh}{arcsinh}
+\DeclareMathOperator{\arctanh}{arctanh}
+\DeclareMathOperator{\diag}{diag}
+\DeclareMathOperator{\Hom}{Hom}
+\DeclareMathOperator{\End}{End}
+\DeclareMathOperator{\Aut}{Aut}
+\DeclareMathOperator{\Isom}{Isom}
+\DeclareMathOperator{\id}{id}
+\DeclareMathOperator{\Id}{Id}
+\def\Ker{\qopname\relax o{Ker}}
+\DeclareMathOperator{\Span}{Span}
+\DeclareMathOperator{\Spec}{Spec}
+\def\sgn{\qopname\relax o{sgn}}
+
+% Common Algebraic Objects
+\newcommand\M[2]{\text{M}_{#1}(#2)}
+\newcommand\GL[2]{\text{GL}_{#1}(#2)}
+\newcommand\SL[2]{\text{SL}_{#1}(#2)}
+\newcommand\CP[1]{\mathbf{\text{CP}}^{#1}}
+\newcommand\PGL[2]{\text{PGL}(#1,#2)}
+
+% Fonts
+\newcommand\A {\mathbb{A}} % AA is Å
+\newcommand\BB{\mathbb{B}}
+\newcommand\CC{\mathbb{C}}
+\newcommand\DD{\mathbb{D}}
+\newcommand\EE{\mathbb{E}}
+\newcommand\FF{\mathbb{F}}
+\newcommand\GG{\mathbb{G}}
+\newcommand\HH{\mathbb{H}}
+\newcommand\II{\mathbb{I}}
+\newcommand\JJ{\mathbb{J}}
+\newcommand\KK{\mathbb{K}}
+%\renewcommand\LL{\mathbb{L}} -- "\LeftLabel"
+\newcommand\MM{\mathbb{M}}
+\newcommand\NN{\mathbb{N}}
+\newcommand\OO{\mathbb{O}}
+\newcommand\PP{\mathbb{P}}
+\newcommand\QQ{\mathbb{Q}}
+\newcommand\RR{\mathbb{R}}
+%\renewcommand\SS{\mathbb{S}} -- (German ß)
+\newcommand\bSS{\mathbb{S}}
+\newcommand\TT{\mathbb{T}}
+\newcommand\UU{\mathbb{U}}
+\newcommand\VV{\mathbb{V}}
+\newcommand\WW{\mathbb{W}}
+\newcommand\XX{\mathbb{X}}
+\newcommand\YY{\mathbb{Y}}
+\newcommand\ZZ{\mathbb{Z}}
+
+\newcommand\bA{\mathbf{A}}
+\newcommand\bB{\mathbf{B}}
+\newcommand\bC{\mathbf{C}}
+\newcommand\bD{\mathbf{D}}
+\newcommand\bE{\mathbf{E}}
+\newcommand\bF{\mathbf{F}}
+\newcommand\bG{\mathbf{G}}
+\newcommand\bH{\mathbf{H}}
+\newcommand\bI{\mathbf{I}}
+\newcommand\bJ{\mathbf{J}}
+\newcommand\bK{\mathbf{K}}
+\newcommand\bL{\mathbf{L}}
+\newcommand\bM{\mathbf{M}}
+\newcommand\bN{\mathbf{N}}
+\newcommand\bO{\mathbf{O}}
+\newcommand\bP{\mathbf{P}}
+\newcommand\bQ{\mathbf{Q}}
+\newcommand\bR{\mathbf{R}}
+\newcommand\bS{\mathbf{S}}
+\newcommand\bT{\mathbf{T}}
+\newcommand\bU{\mathbf{U}}
+\newcommand\bV{\mathbf{V}}
+\newcommand\bW{\mathbf{W}}
+\newcommand\bX{\mathbf{X}}
+\newcommand\bY{\mathbf{Y}}
+\newcommand\bZ{\mathbf{Z}}
+
+\DeclareMathAlphabet{\mathcal}{OMS}{cmsy}{m}{n}
+
+\newcommand\cA{\mathcal{A}}
+\newcommand\cB{\mathcal{B}}
+\newcommand\cC{\mathcal{C}}
+\newcommand\cD{\mathcal{D}}
+\newcommand\cE{\mathcal{E}}
+\newcommand\cF{\mathcal{F}}
+\newcommand\cG{\mathcal{G}}
+\newcommand\cH{\mathcal{H}}
+\newcommand\cI{\mathcal{I}}
+\newcommand\cJ{\mathcal{J}}
+\newcommand\cK{\mathcal{K}}
+\newcommand\cL{\mathcal{L}}
+\newcommand\cM{\mathcal{M}}
+\newcommand\cN{\mathcal{N}}
+\newcommand\cO{\mathcal{O}}
+\newcommand\cP{\mathcal{P}}
+\newcommand\cQ{\mathcal{Q}}
+\newcommand\cR{\mathcal{R}}
+\newcommand\cS{\mathcal{S}}
+\newcommand\cT{\mathcal{T}}
+\newcommand\cU{\mathcal{U}}
+\newcommand\cV{\mathcal{V}}
+\newcommand\cW{\mathcal{W}}
+\newcommand\cX{\mathcal{X}}
+\newcommand\cY{\mathcal{Y}}
+\newcommand\cZ{\mathcal{Z}}
+
+\newcommand\sA{\mathscr{A}}
+\newcommand\sB{\mathscr{B}}
+\newcommand\sC{\mathscr{C}}
+\newcommand\sD{\mathscr{D}}
+\newcommand\sE{\mathscr{E}}
+\newcommand\sF{\mathscr{F}}
+\newcommand\sG{\mathscr{G}}
+\newcommand\sH{\mathscr{H}}
+\newcommand\sI{\mathscr{I}}
+\newcommand\sJ{\mathscr{J}}
+\newcommand\sK{\mathscr{K}}
+\newcommand\sL{\mathscr{L}}
+\newcommand\sM{\mathscr{M}}
+\newcommand\sN{\mathscr{N}}
+\newcommand\sO{\mathscr{O}}
+\newcommand\sP{\mathscr{P}}
+\newcommand\sQ{\mathscr{Q}}
+\newcommand\sR{\mathscr{R}}
+\newcommand\sS{\mathscr{S}}
+\newcommand\sT{\mathscr{T}}
+\newcommand\sU{\mathscr{U}}
+\newcommand\sV{\mathscr{V}}
+\newcommand\sW{\mathscr{W}}
+\newcommand\sX{\mathscr{X}}
+\newcommand\sY{\mathscr{Y}}
+\newcommand\sZ{\mathscr{Z}}
+
+\newcommand\fraka{\mathfrak{a}}
+\newcommand\frakb{\mathfrak{b}}
+\newcommand\frakc{\mathfrak{c}}
+\newcommand\frakd{\mathfrak{d}}
+\newcommand\frake{\mathfrak{e}}
+\newcommand\frakf{\mathfrak{f}}
+\newcommand\frakg{\mathfrak{g}}
+\newcommand\frakh{\mathfrak{h}}
+\newcommand\fraki{\mathfrak{i}}
+\newcommand\frakj{\mathfrak{j}}
+\newcommand\frakk{\mathfrak{k}}
+\newcommand\frakl{\mathfrak{l}}
+\newcommand\frakm{\mathfrak{m}}
+\newcommand\frakn{\mathfrak{n}}
+\newcommand\frako{\mathfrak{o}}
+\newcommand\frakp{\mathfrak{p}}
+\newcommand\frakq{\mathfrak{q}}
+\newcommand\frakr{\mathfrak{r}}
+\newcommand\fraks{\mathfrak{s}}
+\newcommand\frakt{\mathfrak{t}}
+\newcommand\fraku{\mathfrak{u}}
+\newcommand\frakv{\mathfrak{v}}
+\newcommand\frakw{\mathfrak{w}}
+\newcommand\frakx{\mathfrak{x}}
+\newcommand\fraky{\mathfrak{y}}
+\newcommand\frakz{\mathfrak{z}}
+
+\newcommand\frakA{\mathfrak{A}}
+\newcommand\frakB{\mathfrak{B}}
+\newcommand\frakC{\mathfrak{C}}
+\newcommand\frakD{\mathfrak{D}}
+\newcommand\frakE{\mathfrak{E}}
+\newcommand\frakF{\mathfrak{F}}
+\newcommand\frakG{\mathfrak{G}}
+\newcommand\frakH{\mathfrak{H}}
+\newcommand\frakI{\mathfrak{I}}
+\newcommand\frakJ{\mathfrak{J}}
+\newcommand\frakK{\mathfrak{K}}
+\newcommand\frakL{\mathfrak{L}}
+\newcommand\frakM{\mathfrak{M}}
+\newcommand\frakN{\mathfrak{N}}
+\newcommand\frakO{\mathfrak{O}}
+\newcommand\frakP{\mathfrak{P}}
+\newcommand\frakQ{\mathfrak{Q}}
+\newcommand\frakR{\mathfrak{R}}
+\newcommand\frakS{\mathfrak{S}}
+\newcommand\frakT{\mathfrak{T}}
+\newcommand\frakU{\mathfrak{U}}
+\newcommand\frakV{\mathfrak{V}}
+\newcommand\frakW{\mathfrak{W}}
+\newcommand\frakX{\mathfrak{X}}
+\newcommand\frakY{\mathfrak{Y}}
+\newcommand\frakZ{\mathfrak{Z}}
+
+% for integration
+\newcommand\dr{\diff r}		\newcommand\dR{\diff R}
+\newcommand\ds{\diff s}		\newcommand\dS{\diff S}
+\newcommand\dt{\diff t}		\newcommand\dT{\diff T}
+\newcommand\du{\diff u}		\newcommand\dU{\diff U}
+\newcommand\dvv{\diff v}	\newcommand\dV{\diff V}
+\newcommand\dw{\diff w}		\newcommand\dW{\diff W}
+\newcommand\dx{\diff x}		\newcommand\dX{\diff X}
+\newcommand\dy{\diff y}		\newcommand\dY{\diff Y}
+\newcommand\dz{\diff z}		\newcommand\dZ{\diff Z}
+
+\newcommand\dfa{\diff a}
+\newcommand\dfb{\diff b}
+\newcommand\dfc{\diff c}
+\newcommand\dfd{\diff d}
+\newcommand\dfe{\diff e}
+\newcommand\dff{\diff f}
+\newcommand\dfg{\diff g}
+\newcommand\dfh{\diff h}
+\newcommand\dfi{\diff i}
+\newcommand\dfj{\diff j}
+\newcommand\dfk{\diff k}
+\newcommand\dfl{\diff l}
+\newcommand\dfm{\diff m}
+\newcommand\dfn{\diff n}
+\newcommand\dfo{\diff o}
+\newcommand\dfp{\diff p}
+\newcommand\dfq{\diff q}
+\newcommand\dfr{\diff r}
+\newcommand\dfs{\diff s}
+\newcommand\dft{\diff t}
+\newcommand\dfu{\diff u}
+\newcommand\dfv{\diff v}
+\newcommand\dfw{\diff w}
+\newcommand\dfx{\diff x}
+\newcommand\dfy{\diff y}
+\newcommand\dfz{\diff z}
+\newcommand\dfA{\diff A}
+\newcommand\dfB{\diff B}
+\newcommand\dfC{\diff C}
+\newcommand\dfD{\diff D}
+\newcommand\dfE{\diff E}
+\newcommand\dfF{\diff F}
+\newcommand\dfG{\diff G}
+\newcommand\dfH{\diff H}
+\newcommand\dfI{\diff I}
+\newcommand\dfJ{\diff J}
+\newcommand\dfK{\diff K}
+\newcommand\dfL{\diff L}
+\newcommand\dfM{\diff M}
+\newcommand\dfN{\diff N}
+\newcommand\dfO{\diff O}
+\newcommand\dfP{\diff P}
+\newcommand\dfQ{\diff Q}
+\newcommand\dfR{\diff R}
+\newcommand\dfS{\diff S}
+\newcommand\dfT{\diff T}
+\newcommand\dfU{\diff U}
+\newcommand\dfV{\diff V}
+\newcommand\dfW{\diff W}
+\newcommand\dfX{\diff X}
+\newcommand\dfY{\diff Y}
+\newcommand\dfZ{\diff Z}
+
+\newcommand\dalf{\diff\alpha}
+\newcommand\dbet{\diff\beta}
+\newcommand\dgam{\diff\gamma}
+\newcommand\deps{\diff\epsilon}
+\newcommand\dth{\diff\theta}
+\newcommand\dmu{\diff\mu}
+\newcommand\dnu{\diff\nu}
+\newcommand\dpi{\diff\pi}
+\newcommand\drho{\diff\rho}
+\newcommand\dsig{\diff\sigma}
+\newcommand\dtau{\diff\tau}
+
+\newcommand\dvol{\diff\!\vol}
+\newcommand\dVol{\diff\!\Vol}
+
+\newcommand\dcross{\diff^{\kern-2pt\raisebox{1pt}{$\times$}}\kern-8pt}
+\newcommand\dxa{\dcross a}
+\newcommand\dxy{\dcross y}
+\newcommand\dxz{\dcross z}
+
+% Vectors
+\renewcommand\va{\underline{a}}
+\renewcommand\vb{\underline{b}}
+\newcommand\vc{\underline{c}}
+\newcommand\vd{\underline{d}}
+\newcommand\ve{\underline{e}}
+\newcommand\vg{\underline{g}}
+\newcommand\vh{\underline{h}}
+\newcommand\vk{\underline{k}}
+\newcommand\vll{\underline{l}}
+\newcommand\vm{\underline{m}}
+\newcommand\vp{\underline{p}}
+\newcommand\vq{\underline{q}}
+\newcommand\vr{\underline{r}}
+\newcommand\vs{\underline{s}}
+\newcommand\vt{\underline{t}}
+\renewcommand\vu{\underline{u}}
+\newcommand\vv{\underline{v}}
+\newcommand\vw{\underline{w}}
+\newcommand\vx{\underline{x}}
+\newcommand\vy{\underline{y}}
+\newcommand\vz{\underline{z}}
+\newcommand\zv{\underline{0}}
