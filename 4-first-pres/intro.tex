@@ -36,6 +36,8 @@
             \node[below] at (1.2,1) {\(\scalebox{2}{\(+\)}\)};
     
             \draw[thick] (2,2)--(-2,-2);
+
+            \node[below] at (-1.2,1) {\(\scalebox{2}{\(-\)}\)};
     
             \draw[fill] (-2,2) circle (5pt);
     
@@ -50,4 +52,82 @@
             \draw[fill] (-4,0) circle (5pt);
         \end{tikzpicture}
     \end{figure}
+\end{frame}
+
+\begin{frame}
+    If an edge $uv$ is labelled with a $+$, we denote the edge by $uv^{+}$.
+    \begin{definition}
+        For any vertex $u \in V(G)$
+        \begin{enumerate}
+            \item The positive degree of the vertex is
+            \begin{equation*}
+                d^{+}(u) = |\{v \in V(G) \mid uv^+ \in E(G)\}|
+            \end{equation*}
+            \item The negative degree of the vertex is
+            \begin{equation*}
+                d^{-}(u) = |\{v \in V(G) \mid uv^- \in E(G)\}|
+            \end{equation*}
+            \item The signed degree of a vertex is
+            \begin{equation*}
+                sd(u) = d^+(u) - d^-(u)
+            \end{equation*}
+        \end{enumerate}
+    \end{definition}
+\end{frame}
+
+\begin{frame}
+    \begin{figure}[H]
+        \centering
+        \begin{tikzpicture}[scale=1]
+            %graph
+            \draw[thick] (2,2)--(4,0);
+
+            \node[right] at (3,1.25) {\(\scalebox{2}{\(+\)}\)};
+    
+            \draw[thick] (4,0)--(2,-2);
+
+            \node[right] at (3,-1.25) {\(\scalebox{2}{\(-\)}\)};
+    
+            \draw[thick] (2,-2)--(-2,-2);
+
+            \node[above] at (0,-2) {\(\scalebox{2}{\(+\)}\)};
+    
+            \draw[thick] (-2,-2)--(-4,0);
+
+            \node[left] at (-3,-1.25) {\(\scalebox{2}{\(+\)}\)};
+    
+            \draw[thick] (-4,0)--(-2,2);
+
+            \node[left] at (-3,1.25) {\(\scalebox{2}{\(-\)}\)};
+    
+            \draw[thick] (-2,2)--(2,2);
+
+            \node[below] at (0,2) {\(\scalebox{2}{\(+\)}\)};
+    
+            \draw[thick] (-2,2)--(2,-2);
+
+            \node[below] at (1.2,1) {\(\scalebox{2}{\(+\)}\)};
+    
+            \draw[thick] (2,2)--(-2,-2);
+
+            \node[below] at (-1.2,1) {\(\scalebox{2}{\(-\)}\)};
+    
+            \draw[fill] (-2,2) circle (5pt);
+
+            \node[left] at (-2.2,2.2) {\(\scalebox{2}{\(u\)}\)};
+    
+            \draw[fill] (2,2) circle (5pt);
+    
+            \draw[fill] (4,0) circle (5pt);
+    
+            \draw[fill] (2,-2) circle (5pt);
+    
+            \draw[fill] (-2,-2) circle (5pt);
+    
+            \draw[fill] (-4,0) circle (5pt);
+        \end{tikzpicture}
+    \end{figure}
+    \begin{align*}
+        d^+(u) = 1 && d^-(u) = 2 && sd(u) = -1 && d(u) = 3
+    \end{align*}
 \end{frame}
