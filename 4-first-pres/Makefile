@@ -1,4 +1,4 @@
-JUNK = main.aux main.fdb_latexmk main.fls main.log main.out main.blg main.bbl main.nav main.snm main.toc
+JUNK = *.aux *.fdb_latexmk *.fls *.log *.out *.blg *.bbl *.nav *.snm *.toc
 OUT = main.pdf
 
 # $(OUT) means it will recompile everything every time
@@ -12,5 +12,5 @@ clean:
 	rm $(OUT)
 
 main.pdf: main.tex citations.bib
-	latexmk -pdf -bibtex
+	latexmk -pdf -bibtex -interaction=nonstopmode main.tex
 	rm $(JUNK)
