@@ -1,2 +1,71 @@
-\section{Conclusion (or additional results idk)}
-section text here.....
+\section{Additional Results}
+
+\begin{frame}
+	The paper proves a few other results, which we cover without proof.
+		\begin{theorem}[Yan, Lih, Kuo, Chang (1996)]
+			Suppose $\sigma : d_1,...,d_p$ is an integral sequence of $p \geq 2$ terms. Suppose $\sigma$ has $p_+$ positive terms, $p_0$ zero terms and $p_-$ negative terms. Let $\delta = 1$ if $p_+p_- > 0$ and $\delta = 0$ otherwise. Then, Then $\sigma$ is the signed degree sequence of a signed tree if and only if (T1) to (T4) hold.
+			\begin{itemize}
+				\item[(T1)] $\sum_{i = 1}^{p} d_i \equiv 2p - 2 \pmod 4$
+				\item[(T2)] $\sum_{i = 1}^{p} \lvert d_i \rvert \le 2p - 2 - 2p_0$
+				\item[(T3)] $\sum_{i = 1}^{p} \lvert d_i \rvert + 2\sum_{d_i < 0} \lvert d_i \rvert \leq 2p - 2 - 4\delta + 4p_-$
+				\item[(T4)] $\sum_{i = 1}^{p} \lvert d_i \rvert + 2\sum_{d_i > 0} \lvert d_i \rvert \leq 2p - 2 - 4\delta + 4p_+$
+			\end{itemize}
+		\end{theorem}
+	\begin{itemize}
+		\item The proof in this case follows by some induction and a lot of elbow grease.
+		\item This gives us a characterization of the degree sequences of signed trees.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}
+	\begin{lemma}[Chartrand, Gavlas, Harary, Schultz (1994)]
+		Let $G = (V,E)$ is a signed graph. If $q := \lVert G \rVert$, $q^+$ is the number of positive edges and $q^-$ is the number of negative edges, then $k := \sum_{v \in G} sdeg(v) \equiv 2\lVert G \rVert \mod 4$ and $q^+ = (2q+k)/4$ and $q^- = (2q-k)/4$.
+	\end{lemma}
+	\begin{theorem}[Yan, Lih, Kuo, Chang (1996)]
+		A sequence $d_1, d_2, ..., d_p$ is the signed degree of a graph with loops if and only if $\sum_{i = 1}^{p} d_i \equiv 0 \mod 2$.
+	\end{theorem}
+	To prove this we use the lemma and the fact that $d_1,...,d_p$ has an even number of odd elements.
+\end{frame}
+
+
+\begin{frame}
+	\begin{theorem}[Yan, Lih, Kuo, Chang (1996)]
+		A sequence $d_1, d_2, ..., d_p$ is the signed degree of a graph with multiple edges if and only if $\sum_{i = 1}^{p} d_i \equiv 0 \mod 2$.
+	\end{theorem}
+	This follows from the previous lemma and the construction of $G = (V,E)$ as $V = \{ v_1, ..., v_p \}$ and 
+		\begin{align*}
+			E = 
+				& \left\{ -d_3 + \frac{1}{2}\sum_{i = 1}^{p} d_i \text{ copies of }  v_1v_2\right\} \\
+				& \cup \left\{ d_2 + d_3 - \frac{1}{2}\sum_{i = 1}^{p} d_i \text{ copies of } v_2v_3\right\} \\
+				& \cup \left\{ d_1 + d_3 - \frac{1}{2}\sum_{i = 1}^{p} d_i \text{ copies of } v_1v_3\right\} \\ 
+				& \cup \{ d_i \text{ copies of } v_3v_i : 4 \leq i \leq p \}
+		\end{align*}
+\end{frame}
+
+
+
+\section{Conclusion.}
+
+
+\begin{frame}
+	In summary, we set out to find a Havel-Hakimi equivalent for signed graphs. After this paper we have a complete characterization of:
+		\begin{enumerate}
+			\item Signed degree sequences of signed graphs.
+			\item Signed degree sequences of signed tree graphs.
+			\item Signed degree sequences of signed graphs with loops and signed graphs with multiple edges. In particular, signed multigraphs in general.
+		\end{enumerate}
+\end{frame}
+
+
+\begin{frame}{A little treat.}
+	\begin{problem}
+		Given a fixed (partially ordered) Abelian group $(K, +, \geq)$ we can define a $K$-graph $G$ as a (finite) graph $(V,E)$ where each $e \in E$ is given an associated element of $K$ (call it $e_K$). Let $E(v) = \{ xy \in E : x = v \}$ be the set of edges incident to $v$. We may then define the $K$-degree as $K\text{-}\deg(v) = \sum_{e \in E(v)} e_K$. 
+		
+		Hence, given a sequence $d_1 \geq d_2 \geq ... \geq d_n$ in an Abelian group $K$, when can we find a $K$-graph $G$ with vertex set $\{ v_1, ..., v_n \}$ such that $K\text{-}\deg(v_i) = d_i$? 
+	\end{problem}
+\end{frame}
+
+\begin{frame}{Thank You For Listening.}
+	\centering \Huge
+	\emph{Fin}
+\end{frame}
