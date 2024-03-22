@@ -1,5 +1,40 @@
 \section{Proof}
 
+<<<<<<< HEAD
 \begin{frame}{Proof of Main Theorem.}
 	TODO proof goes here.
+=======
+\begin{frame}{Setup for $\implies$}
+	Suppose $\sigma$ is the signed degree sequence of a signed graph $G = (V,E)$, where $V = \{v_1,\dots,v_p\}$ and $d_i = sd(v_i)$. For each $0 \leq s \leq \frac{p-1-d_1}{2}$, define the signed degree sequence
+	\begin{equation*}
+		\sigma_s' : d_2-1,\dots,d_{d_1+s+1}-1,d_{d_1+s+2},\dots,d_{p-s},d_{p-s+1}+1,\dots,d_p+1
+	\end{equation*}
+	By the previous theorem, this sequence is graphical for at least one $m$. In particular, we choose $s$ to minimize $|s-m|$, and call the associated signed graph $G' = (V',E')$. We proceed now by contradiction.
+\end{frame}
+
+\begin{frame}{Case 1 : $s < m$}
+	By construction, $d_{d_1+s+2} > d_{p-s}$ since $s+1 \leq m$ and our sequence is in standard form. Set $a = d_1+s+2, b = p - s$. We end up with one of the following subcases.
+	\begin{enumerate}
+		\item $\exists x \in V'$ such that $v_ax^{+}, v_bx^{-} \in E'$. Then remove both these edges from $G'$ to get the signed degree sequence $\sigma_{s+1}'$, making $\sigma_{s+1}'$ graphical and contradicting the minimality of $|s - m|$.
+		\item $\exists x \in V'$ such that $v_ax^{+} \in E'$, $v_bx^{\pm} \notin E'$. Then remove $v_ax^{+}$ and add $v_bx^{+}$ to get the signed degree sequence $\sigma_{s+1}'$.
+		\item $\exists x \in V'$ such that $v_bx^{-} \in E'$, $v_ax^{\pm} \notin E'$. Then remove $v_bx^{-}$ and add $v_ax^{-}$ to get the signed degree sequence $\sigma_{s+1}'$.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Case 2 : $s > m$}
+	By construction, $d_{d_1+s} > d_{p-s+2}$ since $s-1 \geq m$ and our sequence is in standard form. Set $a = d_1+s, b = p-s+2$. We end up with one of the following subcases.
+	\begin{enumerate}
+		\item $\exists x \in V'$ such that $v_ax^{+}, v_bx^{-} \in E'$. Then remove both these edges from $G'$ to get the signed degree sequence $\sigma_{s-1}'$, making $\sigma_{s-1}'$ graphical and contradicting the minimality of $|s - m|$.
+		\item $\exists x \in V'$ such that $v_ax^{+} \in E'$, $v_bx^{\pm} \notin E'$. Then remove $v_ax^{+}$ and add $v_bx^{+}$ to get the signed degree sequence $\sigma_{s-1}'$.
+		\item $\exists x \in V'$ such that $v_bx^{-} \in E'$, $v_ax^{\pm} \notin E'$. Then remove $v_bx^{-}$ and add $v_ax^{-}$ to get the signed degree sequence $\sigma_{s-1}'$.
+	\end{enumerate}
+\end{frame}
+
+\begin{frame}{Proof of $\Leftarrow$}
+	Let $G' = (V',E')$ be the signed graph for $\sigma_m'$. We insert a new vertex $v$ into $G'$, and connect it to the vertices $v_2,\dots,v_{d_1+m+1}$ via a positive edge, and $d_{p-m+1},\dots,d_p$ via a negative edge. The resulting new vertex would have degree
+	\begin{equation*}
+		(d_1+m)-(m) = d_1
+	\end{equation*}
+	as required.
+>>>>>>> 925ec72427ce7fa7a99f2ee9cff6a753e646e0f5
 \end{frame}
