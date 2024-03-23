@@ -15,18 +15,18 @@
 \begin{frame}{Case 1 : $s < m$}
 	By construction, $d_{d_1+s+2} > d_{p-s}$ since $s+1 \leq m$ and our sequence is in standard form. Set $a = d_1+s+2, b = p - s$. We end up with one of the following subcases.
 	\begin{enumerate}
-		\item $\exists x \in V'$ such that $v_ax^{+}, v_bx^{-} \in E'$. Then remove both these edges from $G'$ to get the signed degree sequence $\sigma_{s+1}'$, making $\sigma_{s+1}'$ graphical and contradicting the minimality of $|s - m|$.
-		\item $\exists x \in V'$ such that $v_ax^{+} \in E'$, $v_bx^{\pm} \notin E'$. Then remove $v_ax^{+}$ and add $v_bx^{+}$ to get the signed degree sequence $\sigma_{s+1}'$.
-		\item $\exists x \in V'$ such that $v_bx^{-} \in E'$, $v_ax^{\pm} \notin E'$. Then remove $v_bx^{-}$ and add $v_ax^{-}$ to get the signed degree sequence $\sigma_{s+1}'$.
+		\item $\exists x \in V'\backslash\{v_a,v_b\}$ such that $v_ax^{+}, v_bx^{-} \in E'$. Then remove both these edges from $G'$ to get the signed degree sequence $\sigma_{s+1}'$, making $\sigma_{s+1}'$ graphical and contradicting the minimality of $|s - m|$.
+		\item $\exists x \in V'\backslash\{v_a,v_b\}$ such that $v_ax^{+} \in E'$, $v_bx^{\pm} \notin E'$. Then remove $v_ax^{+}$ and add $v_bx^{+}$ to get the signed degree sequence $\sigma_{s+1}'$.
+		\item $\exists x \in V'\backslash\{v_a,v_b\}$ such that $v_bx^{-} \in E'$, $v_ax^{\pm} \notin E'$. Then remove $v_bx^{-}$ and add $v_ax^{-}$ to get the signed degree sequence $\sigma_{s+1}'$.
 	\end{enumerate}
 \end{frame}
 
 \begin{frame}{Case 2 : $s > m$}
-	By construction, $d_{d_1+s} > d_{p-s+2}$ since $s-1 \geq m$ and our sequence is in standard form. Set $a = d_1+s, b = p-s+2$. We end up with one of the following subcases.
+	By construction, $d_{d_1+s+1} \leq d_{p-s+1}$, so since $s > m$ and our sequence is in standard form we get by the maximality of $m$ that $d_{d_1+s+1} = d_{p-s+1}$, so $d_{d_1+s+1}-1 < d_{p-s+1}+1$. Set $a = d_1+s+1, b = p-s+1$. We end up with one of the following subcases.
 	\begin{enumerate}
-		\item $\exists x \in V'$ such that $v_ax^{+}, v_bx^{-} \in E'$. Then remove both these edges from $G'$ to get the signed degree sequence $\sigma_{s-1}'$, making $\sigma_{s-1}'$ graphical and contradicting the minimality of $|s - m|$.
-		\item $\exists x \in V'$ such that $v_ax^{+} \in E'$, $v_bx^{\pm} \notin E'$. Then remove $v_ax^{+}$ and add $v_bx^{+}$ to get the signed degree sequence $\sigma_{s-1}'$.
-		\item $\exists x \in V'$ such that $v_bx^{-} \in E'$, $v_ax^{\pm} \notin E'$. Then remove $v_bx^{-}$ and add $v_ax^{-}$ to get the signed degree sequence $\sigma_{s-1}'$.
+		\item $\exists x \in V'\backslash\{v_a,v_b\}$ such that $v_ax^{-}, v_bx^{+} \in E'$. Then remove both these edges from $G'$ to get the signed degree sequence $\sigma_{s-1}'$, making $\sigma_{s-1}'$ graphical and contradicting the minimality of $|s - m|$.
+		\item $\exists x \in V'\backslash\{v_a,v_b\}$ such that $v_ax^{-} \in E'$, $v_bx^{\pm} \notin E'$. Then remove $v_ax^{-}$ and add $v_bx^{-}$ to get the signed degree sequence $\sigma_{s-1}'$.
+		\item $\exists x \in V'\backslash\{v_a,v_b\}$ such that $v_bx^{+} \in E'$, $v_ax^{\pm} \notin E'$. Then remove $v_bx^{+}$ and add $v_ax^{+}$ to get the signed degree sequence $\sigma_{s-1}'$.
 	\end{enumerate}
 \end{frame}
 
