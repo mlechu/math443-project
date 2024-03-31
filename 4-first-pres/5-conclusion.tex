@@ -59,9 +59,10 @@
 
 \begin{frame}{A little treat.}
 	\begin{problem}
-		Given a fixed (partially ordered) Abelian group $(K, +, \geq)$ we can define a $K$-graph $G$ as a (finite) graph $(V,E)$ where each $e \in E$ is given an associated element of $K$ (call it $e_K$). Let $E(v) = \{ xy \in E : x = v \}$ be the set of edges incident to $v$. We may then define the $K$-degree as $K\text{-}\deg(v) = \sum_{e \in E(v)} e_K$. 
-		
-		Hence, given a sequence $d_1 \geq d_2 \geq ... \geq d_n$ in an Abelian group $K$, when can we find a $K$-graph $G$ with vertex set $\{ v_1, ..., v_n \}$ such that $K\text{-}\deg(v_i) = d_i$? 
+		Now that we have generalized Havel-Hakimi to signed graphs, we are left with the question, how can we generalize it further?
+		The extension to signed graphs is essentially adding a new \textit{type} of degree to each vertex. With normal graphs we have degree, and now with signed graphs we have a positive and negative degree.
+		What if we extended this notion again, adding a new \textit{type} of degree, to go from degree types in $\{\pm 1\}$ to $\Z/p\Z$. This shouldn't feel any less natural than what we have shown in this presentation so far.
+		And so our question is, does there exist a generalization, giving a statement of the form, a sequence $\sigma$ is $p-graphical$ if and only if $\sigma'$ is $p-graphical$ for some property of $\sigma$ and $\sigma'$.
 	\end{problem}
 \end{frame}
 
