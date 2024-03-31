@@ -8,9 +8,9 @@ OUT = main.pdf
 all: $(OUT)
 
 clean:
-	rm $(JUNK)
-	rm $(OUT)
+	rm $(JUNK) || true
+	rm $(OUT) || true
 
 main.pdf: main.tex citations.bib
 	latexmk -pdf -bibtex -interaction=nonstopmode main.tex
-	rm $(JUNK)
+	rm $(JUNK) || true
