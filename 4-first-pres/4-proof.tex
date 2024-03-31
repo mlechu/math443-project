@@ -29,6 +29,16 @@
 	\end{enumerate}
 \end{frame}
 
+
+\begin{frame}
+	Under each of these subcases, here's how the signed degree sequences change under adding/removing the mentioned edges. Notice that in each case, $d(x)$ stays constant.
+	\begin{align*}
+		\sigma^\prime_s&: d_2-1, \dots, d_{d_1+s+1}-1, d_{a}, \dots, d_{b}, d_{p-s+1}+1, \dots, d_p+1 \\
+			& \leadsto d_2-1, \dots, d_{d_1+s+1}-1, \color{red} d_{a} - 1 \color{black}, \dots, \color{red} d_{b} + 1 \color{black}, d_{p-s+1}+1, \dots, d_p+1
+	\end{align*}
+\end{frame}
+
+
 \begin{frame}{Case 2 : $s > m$}
 	By construction, $d_{d_1+s+1} \leq d_{p-s+1}$, so since $s > m$ and our sequence is in standard form we get by the maximality of $m$ that $d_{d_1+s+1} = d_{p-s+1}$, so $d_{d_1+s+1}-1 < d_{p-s+1}+1$. Set $a = d_1+s+1, b = p-s+1$. We end up with one of the following subcases.
 	\begin{enumerate}
