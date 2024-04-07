@@ -18,13 +18,10 @@
 \end{frame}
 
 \begin{frame}
-	\begin{lemma}[Chartrand, Gavlas, Harary, Schultz (1994)]
-		Let $G = (V,E)$ is a signed graph. If $q := \lVert G \rVert$, $q^+$ is the number of positive edges and $q^-$ is the number of negative edges, then $k := \sum_{v \in G} sdeg(v) \equiv 2\lVert G \rVert \mod 4$ and $q^+ = (2q+k)/4$ and $q^- = (2q-k)/4$.
-	\end{lemma}
 	\begin{theorem}[Yan, Lih, Kuo, Chang (1996)]
-		A sequence $d_1, d_2, ..., d_p$ is the signed degree of a graph with loops if and only if $\sum_{i = 1}^{p} d_i \equiv 0 \mod 2$.
+		A sequence $d_1, d_2, ..., d_p$ is the signed degree sequence of a graph with loops if and only if $\sum_{i = 1}^{p} d_i \equiv 0 \mod 2$.
 	\end{theorem}
-	To prove this we use the lemma, which gives that $d_1,...,d_p$ has an even number of odd elements.
+	To prove this we observe that $\{d_1,...,d_p\}$ has an even number of odd elements.
 \end{frame}
 
 
@@ -32,7 +29,7 @@
 	\begin{theorem}[Yan, Lih, Kuo, Chang (1996)]
 		A sequence $d_1, d_2, ..., d_p$ is the signed degree sequence of a graph with multiple edges if and only if $\sum_{i = 1}^{p} d_i \equiv 0 \mod 2$.
 	\end{theorem}
-	This follows from the previous lemma and the construction of $G = (V,E)$ as $V = \{ v_1, ..., v_p \}$ and 
+	This follows from the construction of $G = (V,E)$ as $V = \{ v_1, ..., v_p \}$ and 
 		\begin{align*}
 			E = 
 				& \left\{ -d_3 + \frac{1}{2}\sum_{i = 1}^{p} d_i \text{ copies of }  v_1v_2\right\} \\
